@@ -1,0 +1,25 @@
+<%= form_for(@porhacer) do |f| %>
+  <% if @porhacer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@porhacer.errors.count, "error") %> prohibited this porhacer from being saved:</h2>
+
+      <ul>
+      <% @porhacer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :hecho %><br>
+    <%= f.check_box :hecho %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
